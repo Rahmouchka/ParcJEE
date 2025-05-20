@@ -19,6 +19,5 @@ public class ImpDaoVoiture implements IDaoVoiture {
             throw new RuntimeException("Échec d'obtention de la connexion", e);
         }
     }
-
 }
 

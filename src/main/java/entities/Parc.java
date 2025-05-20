@@ -1,23 +1,23 @@
 package entities;
 
 public class Parc {
-    private Parc num_parc;
+    private int num_parc;
     private String libelle;
     private int capacite;
     private String localisation;
 
-    public Parc getNum_parc() {
-        return num_parc;
-    }
+    public Parc(){}
 
-    public Parc(Parc num_parc, String libelle, int capacite, String localisation) {
+    public Parc(int num_parc, String libelle, int capacite, String localisation) {
         this.num_parc = num_parc;
         this.libelle = libelle;
         this.capacite = capacite;
         this.localisation = localisation;
     }
-
-    public void setNum_parc(Parc num_parc) {
+    public int getNum_parc() {
+        return num_parc;
+    }
+    public void setNum_parc(int num_parc) {
         this.num_parc = num_parc;
     }
 
