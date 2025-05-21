@@ -44,6 +44,14 @@ public class ModelVoiture {
         return this.daoVoiture.getVoiture(id);
     }
 
+    public ArrayList<Voiture> getVoitures() {
+        return this.daoVoiture.getVoitures();
+    }
+
+    public List<Voiture >voitureDispo() {
+        return this.daoVoiture.getVoituresDisponibles();
+    }
+
     public List<Voiture> list() {
         return this.daoVoiture.getVoitures();
     }

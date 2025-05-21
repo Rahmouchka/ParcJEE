@@ -459,7 +459,12 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link" href="/">
-                        <i class="fas fa-home"></i> Tableau de bord
+                        <i class="fas fa-home"></i> Acceuil
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard">
+                        <i class="fas fa-chart-simple"></i>  Tableau de bord
                     </a>
                 </li>
                 <li class="nav-item">

@@ -6,9 +6,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public interface IDaoClient {
-    public void ajouterClient(Client clt);
-    public void supprimerClient(int id);
-    public void modifierClient(Client clt);
+    void ajouterClient(Client clt);
+    void supprimerClient(int id);
+    void modifierClient(Client clt);
     Client getClient(int id);
     ArrayList<Client> getClients();
     Client rechercheByNumCIN(int numCIN);

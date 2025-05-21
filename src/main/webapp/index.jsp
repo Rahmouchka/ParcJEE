@@ -580,7 +580,12 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" href="/">
-                        <i class="fas fa-home"></i> Tableau de bord
+                        <i class="fas fa-home"></i> Acceuil
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard">
+                        <i class="fas fa-chart-simple"></i>  Tableau de bord
                     </a>
                 </li>
                 <li class="nav-item">
@@ -628,7 +633,7 @@
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-6 hero-content">
-                <h1 class="hero-title">Tableau de bord Admin</h1>
+                <h1 class="hero-title">Bienvenu cher Admin</h1>
                 <p class="hero-subtitle">Gérez efficacement votre agence de location de voitures avec notre interface d'administration complète.</p>
                 <div>
                     <a href="/voiture" class="btn hero-btn hero-btn-primary">Gérer les véhicules</a>
@@ -700,7 +705,7 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <div class="about-image">
-                    <img src="https://img.freepik.com/free-vector/business-team-planning-working-process-flat-vector-illustration-cartoon-colleagues-meeting-discussing-new-project-company-office-employees-sharing-ideas_74855-9818.jpg" alt="À propos de l'admin">
+                    <img src="https://img.freepik.com/free-photo/business-people-using-digital-tablet_53876-30925.jpg" alt="Dashboard d'administration professionnel">
                 </div>
             </div>
             <div class="col-lg-6">
@@ -714,38 +719,6 @@
                         <li><i class="fas fa-check-circle"></i> Rapports et statistiques détaillés</li>
                         <li><i class="fas fa-check-circle"></i> Interface intuitive et facile à utiliser</li>
                     </ul>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Stats Section -->
-<section class="stats-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-md-6">
-                <div class="stat-item">
-                    <div class="stat-number" id="client-count">0</div>
-                    <div class="stat-label">Clients actifs</div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="stat-item">
-                    <div class="stat-number" id="car-count">0</div>
-                    <div class="stat-label">Véhicules disponibles</div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="stat-item">
-                    <div class="stat-number" id="reservation-count">0</div>
-                    <div class="stat-label">Réservations ce mois</div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="stat-item">
-                    <div class="stat-number" id="parc-count">0</div>
-                    <div class="stat-label">Parcs gérés</div>
                 </div>
             </div>
         </div>
@@ -779,7 +752,7 @@
             <div class="col-lg-2 col-md-6 mb-4">
                 <h4 class="footer-title">Navigation</h4>
                 <ul class="footer-links">
-                    <li><a href="/"><i class="fas fa-chevron-right"></i> Tableau de bord</a></li>
+                    <li><a href="/dashboard"><i class="fas fa-chevron-right"></i> Tableau de bord</a></li>
                     <li><a href="/client"><i class="fas fa-chevron-right"></i> Clients</a></li>
                     <li><a href="/voiture"><i class="fas fa-chevron-right"></i> Voitures</a></li>
                 </ul>
@@ -797,11 +770,11 @@
                 <ul class="footer-contact">
                     <li>
                         <i class="fas fa-map-marker-alt"></i>
-                        <span>123 Avenue de la République, 75011 Paris, France</span>
+                        <span>20 Avenue Habib Bourguiba, 1001 Tunis, Tunisie</span>
                     </li>
                     <li>
                         <i class="fas fa-phone-alt"></i>
-                        <span>Support: +33 1 23 45 67 89</span>
+                        <span>Support: +216 95 171 454</span>
                     </li>
                     <li>
                         <i class="fas fa-envelope"></i>
@@ -820,36 +793,5 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-<script>
-    // Animation pour les statistiques
-    function animateValue(id, start, end, duration) {
-        let obj = document.getElementById(id);
-        let startTimestamp = null;
-        const step = (timestamp) => {
-            if (!startTimestamp) startTimestamp = timestamp;
-            const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-            obj.innerHTML = Math.floor(progress * (end - start) + start);
-            if (progress < 1) {
-                window.requestAnimationFrame(step);
-            }
-        };
-        window.requestAnimationFrame(step);
-    }
-
-    // Démarrer les animations quand la section est visible
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                animateValue("client-count", 0, 1243, 2000);
-                animateValue("car-count", 0, 87, 1500);
-                animateValue("reservation-count", 0, 156, 1800);
-                animateValue("parc-count", 0, 5, 1000);
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {threshold: 0.5});
-
-    observer.observe(document.querySelector(".stats-section"));
-</script>
 </body>
 </html>

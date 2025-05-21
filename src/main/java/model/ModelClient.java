@@ -32,6 +32,10 @@ public class ModelClient {
         return daoClient.getClient(id);
     }
 
+    public ArrayList<Client> getClients() {
+        return daoClient.getClients();
+    }
+
     public void setClient(Client client) {
         this.client = client;
     }

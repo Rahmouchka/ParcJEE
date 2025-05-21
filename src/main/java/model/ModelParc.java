@@ -22,6 +22,10 @@ public class ModelParc {
         return parc;
     }
 
+    public ArrayList<Parc> getParcs() {
+        return this.daoParc.getParcs();
+    }
+
     public void setParc(Parc parc) {
         this.parc = parc;
     }

@@ -10,6 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 public class ImpDaoVoiture implements IDaoVoiture {
     private Connection con;
@@ -120,6 +121,29 @@ public class ImpDaoVoiture implements IDaoVoiture {
             throw new RuntimeException(e);
         }
 
+    }
+
+    @Override
+    public List<Voiture> getVoituresDisponibles() {
+        List<Voiture> voitures = new ArrayList<>();
+        String sql = "SELECT * FROM voiture WHERE codeVoiture NOT IN (" +
+                "SELECT codeVoiture FROM location WHERE dateDeb <= CURRENT_DATE AND dateFin >= CURRENT_DATE)";
+        try (PreparedStatement ps = con.prepareStatement(sql)) {
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                Voiture voiture = new Voiture();
+                voiture.setCode_voiture(rs.getInt("codeVoiture"));
+                voiture.setMatricule(rs.getString("matricule"));
+                voiture.setModele(rs.getString("modele"));
+                voiture.setMarque(rs.getString("marque"));
+                voiture.setKilometrage(rs.getFloat("kilometrage"));
+                voiture.setParc(daoParc.getParc(rs.getInt("codeParc")));
+                voitures.add(voiture);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return voitures;
     }
 
     @Override

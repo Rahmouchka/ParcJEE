@@ -4,6 +4,7 @@ package dao;
 import entities.Voiture;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public interface IDaoVoiture {
     void ajouterVoiture(Voiture voiture);
@@ -15,6 +16,8 @@ public interface IDaoVoiture {
     Voiture getVoiture(int id);
 
     Voiture getVoitureByMatricule(String mat);
+
+    List<Voiture> getVoituresDisponibles();
 
     void modifierVoiture(Voiture voiture);
 }
