@@ -599,7 +599,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="/reservation" class="nav-link">
+                    <a href="/location" class="nav-link">
                         <i class="fa-solid fa-calendar-check"></i> Réservations
                     </a>
                 </li>
@@ -632,7 +632,7 @@
                 <p class="hero-subtitle">Gérez efficacement votre agence de location de voitures avec notre interface d'administration complète.</p>
                 <div>
                     <a href="/voiture" class="btn hero-btn hero-btn-primary">Gérer les véhicules</a>
-                    <a href="/reservation" class="btn hero-btn hero-btn-outline">Voir les réservations</a>
+                    <a href="/location" class="btn hero-btn hero-btn-outline">Voir les réservations</a>
                 </div>
             </div>
             <div class="col-lg-6 hero-image">
@@ -687,7 +687,7 @@
                     </div>
                     <h3 class="feature-title">Réservations</h3>
                     <p class="feature-desc">Suivez et gérez toutes les réservations de vos clients.</p>
-                    <a href="/reservation" class="feature-link">Accéder <i class="fas fa-arrow-right"></i></a>
+                    <a href="/location" class="feature-link">Accéder <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -788,7 +788,7 @@
                 <h4 class="footer-title">Modules</h4>
                 <ul class="footer-links">
                     <li><a href="/parc"><i class="fas fa-chevron-right"></i> Parcs</a></li>
-                    <li><a href="/reservation"><i class="fas fa-chevron-right"></i> Réservations</a></li>
+                    <li><a href="/location"><i class="fas fa-chevron-right"></i> Réservations</a></li>
                     <li><a href="#"><i class="fas fa-chevron-right"></i> Rapports</a></li>
                 </ul>
             </div>

@@ -79,7 +79,26 @@ public class ImpDaoVoiture implements IDaoVoiture {
         }
         return voitures;
     }
+    @Override
+    public Voiture getVoitureByMatricule(String mat) {
+        try {
+            PreparedStatement query = con.prepareStatement("select * from voiture where matricule=?");
+            query.setString(1, mat);
+            ResultSet rs = query.executeQuery();
+            if (rs.next()) {
 
+                Parc parc;
+                parc = daoParc.getParc(rs.getInt("codeParc"));
+
+
+                return new Voiture(rs.getInt("codeVoiture"),rs.getString("matricule"),rs.getString("marque"),rs.getString("modele"),rs.getFloat("kilometrage"),parc);
+            }else{
+                return null;
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
     @Override
     public Voiture getVoiture(int id) {
 

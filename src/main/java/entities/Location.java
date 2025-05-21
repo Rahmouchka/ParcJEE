@@ -3,23 +3,44 @@ package entities;
 import java.util.Date;
 
 public class Location {
-    private Client client_id;
-    private Voiture Voiture_id;
+    private int codeLocation;
+    private Client client;
+    private Voiture voiture;
     private Date date_deb;
+    private Date date_fin;
 
-    public Date getDate_fin() {
-        return date_fin;
+    public Location() {
     }
 
-    public Location(Client client_id, Voiture voiture_id, Date date_deb, Date date_fin) {
-        this.client_id = client_id;
-        Voiture_id = voiture_id;
+    public Location(Client client, Voiture voiture, Date date_deb, Date date_fin) {
+        this.client = client;
+        this.voiture = voiture;
         this.date_deb = date_deb;
         this.date_fin = date_fin;
     }
 
-    public void setDate_fin(Date date_fin) {
-        this.date_fin = date_fin;
+    public int getCodeLocation() {
+        return codeLocation;
+    }
+
+    public void setCodeLocation(int codeLocation) {
+        this.codeLocation = codeLocation;
+    }
+
+    public Client getClient() {
+        return client;
+    }
+
+    public void setClient(Client client) {
+        this.client = client;
+    }
+
+    public Voiture getVoiture() {
+        return voiture;
+    }
+
+    public void setVoiture(Voiture voiture) {
+        this.voiture = voiture;
     }
 
     public Date getDate_deb() {
@@ -30,21 +51,11 @@ public class Location {
         this.date_deb = date_deb;
     }
 
-    public Voiture getVoiture_id() {
-        return Voiture_id;
+    public Date getDate_fin() {
+        return date_fin;
     }
 
-    public void setVoiture_id(Voiture voiture_id) {
-        Voiture_id = voiture_id;
+    public void setDate_fin(Date date_fin) {
+        this.date_fin = date_fin;
     }
-
-    public Client getClient_id() {
-        return client_id;
-    }
-
-    public void setClient_id(Client client_id) {
-        this.client_id = client_id;
-    }
-
-    private Date date_fin;
 }

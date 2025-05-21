@@ -14,5 +14,7 @@ public interface IDaoVoiture {
 
     Voiture getVoiture(int id);
 
+    Voiture getVoitureByMatricule(String mat);
+
     void modifierVoiture(Voiture voiture);
 }
