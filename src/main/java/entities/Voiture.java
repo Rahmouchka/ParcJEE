@@ -5,18 +5,21 @@ public class Voiture {
     private String matricule;
     private String modele;
     private String marque;
+    private Float kilometrage;
+    private Parc parc;
 
-    public int getCode_voiture() {
-        return code_voiture;
-    }
+    public Voiture(){}
 
-    public Voiture(int code_voiture, String matricule, String modele, String marque, Float kilometrage, Parc parc_id) {
+    public Voiture(int code_voiture, String matricule, String modele, String marque, Float kilometrage, Parc parc) {
         this.code_voiture = code_voiture;
         this.matricule = matricule;
         this.modele = modele;
         this.marque = marque;
         this.kilometrage = kilometrage;
-        this.parc_id = parc_id;
+        this.parc = parc;
+    }
+    public int getCode_voiture() {
+        return code_voiture;
     }
 
     public void setCode_voiture(int code_voiture) {
@@ -55,14 +58,10 @@ public class Voiture {
         this.kilometrage = kilometrage;
     }
 
-    public Parc getParc_id() {
-        return parc_id;
+    public Parc getParc() {
+        return parc;
     }
-
-    public void setParc_id(Parc parc_id) {
-        this.parc_id = parc_id;
+    public void setParc(Parc parc) {
+        this.parc = parc;
     }
-
-    private Float kilometrage;
-    private Parc parc_id;
 }
